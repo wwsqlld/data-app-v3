@@ -1,0 +1,159 @@
+.navbar {
+    top: 0px;
+    left: 0px;
+    width: 100vw;
+    height: 100px;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #dadcdc;
+}
+
+.logo-cont {
+    width: fit-content;
+    height: 100%;
+    background-color: white;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.nav-cont {
+    width: fit-content;
+    height: calc(100% - 40px);
+    background-color: white ;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    padding-top: 40px;
+
+}
+
+.nav-btn {
+    cursor: pointer;
+    text-align: center;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 5px;
+    margin-right: 20px;
+    width: 130px;
+    height: 100%;
+    color: black;
+    font-size: 17px;
+}
+
+.nav-btn p {
+    margin: 0;
+}
+
+
+.active .nav-curs-path{
+   display: block; 
+}
+
+.nav-curs-path {
+    color: black;
+    display: none;
+}
+
+#logo-txt {
+    font-size: 30px;
+    color: black;
+    margin-left: 10px;
+    user-select: none;
+}
+
+#listOpButton {
+    width: 40px;
+    height: 40px;
+    color: white;
+    cursor: pointer;
+    display: block;
+    margin-right: 10px;
+    display: none;
+}
+
+.nav-open-menu {
+    position: absolute;
+    width: 100%;
+    height: 200px;
+    background-color:#252525;
+    top: 100px;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+    z-index: 99;
+}
+
+
+
+.nav-open-menu-enter {
+    opacity: 0;
+    transform: scale(0.9);
+}
+
+.nav-open-menu-enter-active {
+    opacity: 1;
+    transform: translateX(0);
+    transition: opacity 100ms, transform 100ms;
+}
+
+.nav-open-menu-exit {
+    opacity: 1;
+}
+
+.nav-open-menu-exit-active {
+    opacity: 0;
+    transform: scale(0.9);
+    transition: opacity 300ms, transform 300ms;
+}
+
+
+
+
+
+
+
+.nav-btn-menu {
+    width: 50%;
+    height: 50px;
+    background-color: #8739f9;
+    display: flex;
+    justify-content: center;
+    color: white;
+}
+
+#closeButton {
+    width: 40px;
+    height: 40px;
+    color: white;
+    cursor: pointer;
+    display: block;
+    margin-right: 10px;
+    display: none;    
+}
+
+@media screen and (max-width: 700px) {
+    #listOpButton {
+        display: block;
+    }
+
+    #closeButton {
+        display: block;
+    }
+
+    .nav-btn {
+        display: none;
+    }
+
+  }
+
+
+
+
+
