@@ -9,8 +9,7 @@ export const Home = () => {
 
     const [cookies] = useCookies(["access_token"]); 
 
-    const [dataWithMarkList, setdataWithMarkList] = useState([]);
-    const [dataWithoutMarkList, setdataWithoutMarkList] = useState([]);
+    const [dataList, setDataList] = useState([]);
 
     
     // Реф ссылка для базы
@@ -22,10 +21,8 @@ export const Home = () => {
         const getPeople = async () => {
             await getDocs(query(peopleCollectionRef, where("owner", "==", `${cookies.access_token}`))).then((response) => {
                 const dataList = response.docs.map((doc) => ({...doc.data(), id: doc.id }));
-                const dataWith = dataList.filter(doc => doc.bookmark === true);
-                const dataWithout = dataList.filter(doc => doc.bookmark === false);
-                setdataWithMarkList(dataWith)
-                setdataWithoutMarkList(dataWithout)
+                const SortData = dataList.sort((a, b) => (a.bookmark === b.bookmark) ? 0 : a.bookmark ? -1 : 1);
+                setDataList(SortData)
             })
         }
         getPeople();
@@ -46,24 +43,8 @@ export const Home = () => {
 
             ) : ( 
             <>
-            <div className='bookmarked-place'>
-                {dataWithMarkList.map((data) => {
-                    return (
-                        <StaticInfoUser 
-                    id={data.id} 
-                    fullName={data.fullName} 
-                    country={data.country} 
-                    dateOfBirth={data.dateOfBirth} 
-                    phone={data.phone} 
-                    description={data.description} 
-                    images={data.images}
-                    bookmark={data.bookmark}
-                    />    
-                    )
-                })}
-            </div>
             <div className='regular-place'>
-              {dataWithoutMarkList.map((data) => {
+              {dataList.map((data) => {
                 return (
                     <StaticInfoUser 
                     id={data.id} 
