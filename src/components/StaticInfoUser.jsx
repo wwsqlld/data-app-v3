@@ -19,6 +19,17 @@ export const StaticInfoUser = (props) => {
     const [listIm1, setListIm1] = useState([]);
 
     const [ifBooked, setIfBooked] = useState(props.bookmark);
+    const [dL, setDL] = useState(props.dataList);
+
+
+    const toggleActiveById = (id) => {
+        setDL(prevArray => prevArray.map(item => {
+            if (item.id === id) {
+                return { ...item, bookmark: !item.bookmark }; // Изменяем значение параметра active
+            }
+            return item;
+        }));
+    };
 
     const changeBookPoint = async () => {
         const descRef = doc(db, "people", `${props.id}`);
@@ -27,6 +38,8 @@ export const StaticInfoUser = (props) => {
                 bookmark: !ifBooked
             }).then(() => {
                 setIfBooked(!ifBooked)
+                toogleActiveById(props.id)
+                
             })
         } catch (err) {
             console.log(err)
