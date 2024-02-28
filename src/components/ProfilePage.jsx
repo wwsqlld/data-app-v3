@@ -68,6 +68,7 @@ const ProfilePage = () => {
                 <p>Name: {dataAH.displayName}</p>
                 <p>Email: {dataAH.email}</p>
                 <button className='logOutButt' onClick={logOut}>Log Out</button>
+                <input type="text"><input/>
                 
             </>
            ) 
