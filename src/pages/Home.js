@@ -26,7 +26,7 @@ export const Home = () => {
             })
         }
         getPeople();
-    }, [peopleCollectionRef, cookies.access_token]);
+    }, [peopleCollectionRef, cookies.access_token, dataList]);
 
     
 
