@@ -78,7 +78,7 @@ const ProfilePage = () => {
             <>
               <RxAvatar size={100}/>
               <p>Display Name: {profileAsi.displayName}</p>
-              <p>Email: {dataEP.email}</p>
+              <p>Emai: {dataEP.email}</p>
               <button className='logOutButt' onClick={logOut}>Log Out</button> 
             </> 
             )
