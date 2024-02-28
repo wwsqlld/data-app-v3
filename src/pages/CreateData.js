@@ -152,7 +152,7 @@ export const CreateData = () => {
         
 
         <div className='data-cont-small'>
-          <input type="text" placeholder='Full Name:' id='fullName' className='create-data-inp' name='fullName' onChange={(handleChange)}></input>
+          <input value={dataOfUser.fullName} type="text" placeholder='Full Name:' id='fullName' className='create-data-inp' name='fullName' onChange={(handleChange)}></input>
         </div>
         <div className='data-cont-small'>
           <input id='dateOfBirth' className='create-data-inp' type='date' name='dateOfBirth' onChange={(handleChange)}></input>
