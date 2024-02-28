@@ -21,6 +21,8 @@ export const StaticInfoUser = (props) => {
     const [ifBooked, setIfBooked] = useState(props.bookmark);
     const [dL, setDL] = useState(props.dataList);
 
+    const id = props.id
+
 
 
     const changeBookPoint = async () => {
@@ -37,9 +39,14 @@ export const StaticInfoUser = (props) => {
             await updateDoc(descRef, {
                 bookmark: !ifBooked
             }).then(() => {
+                const id = props.id
                 setIfBooked(!ifBooked)
-                toogleActiveById(props.id)
-                
+                setDL(prevArray => prevArray.map(item => {
+                  if (item.id === id) {
+                   return { ...item, bookmark: !item.bookmark }; // Изменяем значение параметра active
+                  }
+                    return item
+                }));
             })
         } catch (err) {
             console.log(err)
