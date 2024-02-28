@@ -40,7 +40,7 @@ export const StaticInfoUser = (props) => {
                 bookmark: !ifBooked
             }).then(() => {
                 const id = props.id
-                setIfBooked(!ifBooked)
+                
                 setDL(prevArray => prevArray.map(item => {
                   if (item.id === id) {
                    return { ...item, bookmark: !item.bookmark }; // Изменяем значение параметра active
