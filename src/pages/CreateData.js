@@ -152,16 +152,16 @@ export const CreateData = () => {
         
 
         <div className='data-cont-small'>
-          <input placeholder='Full Name:' id='fullName' className='create-data-inp' name='fullName' onChange={(handleChange)}></input>
+          <input type="text" placeholder='Full Name:' id='fullName' className='create-data-inp' name='fullName' onChange={(handleChange)}></input>
         </div>
         <div className='data-cont-small'>
           <input id='dateOfBirth' className='create-data-inp' type='date' name='dateOfBirth' onChange={(handleChange)}></input>
         </div>
         <div className='data-cont-small'>
-          <input placeholder='A country' id='country' className='create-data-inp' name='country' onChange={(handleChange)}></input>
+          <input type="text" placeholder='A country' id='country' className='create-data-inp' name='country' onChange={(handleChange)}></input>
         </div>
         <div className='data-cont-small'>
-          <input placeholder='Phone number' id='phone' className='create-data-inp' name='phone' onChange={(handleChange)}></input>
+          <input type="text" placeholder='Phone number' id='phone' className='create-data-inp' name='phone' onChange={(handleChange)}></input>
         </div>
         <div className='data-cont-small'>
           <textarea placeholder='Description' id='data-area' name='description' onChange={(handleChange)}></textarea>
