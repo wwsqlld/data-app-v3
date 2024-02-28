@@ -22,16 +22,16 @@ export const StaticInfoUser = (props) => {
     const [dL, setDL] = useState(props.dataList);
 
 
-    const toggleActiveById = (id) => {
-        setDL(prevArray => prevArray.map(item => {
+
+    const changeBookPoint = async () => {
+        const toggleActiveById = (id) => {
+          setDL(prevArray => prevArray.map(item => {
             if (item.id === id) {
                 return { ...item, bookmark: !item.bookmark }; // Изменяем значение параметра active
             }
             return item;
-        }));
-    };
-
-    const changeBookPoint = async () => {
+          }));
+        };
         const descRef = doc(db, "people", `${props.id}`);
          try {
             await updateDoc(descRef, {
