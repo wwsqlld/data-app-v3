@@ -29,6 +29,7 @@ export const StaticInfoUser = (props) => {
             }
             return item;
         }));
+        setDL(prevArray => prevArray.sort((a, b) => (a.bookmark === b.bookmark) ? 0 : a.bookmark ? -1 : 1))
     };
 
     const changeBookPoint = async () => {
