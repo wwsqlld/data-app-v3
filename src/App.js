@@ -19,7 +19,7 @@ function App() {
       <Navbar />
         <Routes>
           <Route path='/' element={<Home />} />
-          <Route path='/create' element={CreateData()} />
+          <Route path='/create' element={<CreateData />} />
           <Route path='/auth' element={<Auth  />} />
           <Route path='/register' element={<Register  />} />
           <Route path='/person/:id' element={ <IndPerson /> } />
