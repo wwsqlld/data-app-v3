@@ -66,7 +66,7 @@ const ProfilePage = () => {
             <>
                 <img src={dataAH.photoURL} alt="" style={{width:"100px", height:"100px"}}/>
                 <p>Name: {dataAH.displayName}</p>
-                <p>Emai: {dataAH.email}</p>
+                <p>Email and Info: {dataAH.email}</p>
                 <input type="text" placeholder='A country' id='country' className='create-data-inp' name='country' ></input>
                 <button className='logOutButt' onClick={logOut}>Log Out</button>
                 <input type="text" placeholder='A country' id='country' className='create-data-inp' name='country' ></input>
