@@ -55,6 +55,7 @@ export const Home = () => {
                     description={data.description} 
                     images={data.images}
                     bookmark={data.bookmark}
+                    dataList={dataList}
                     />    
                 )
             })}  
