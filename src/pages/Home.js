@@ -11,6 +11,8 @@ export const Home = () => {
 
     const [dataList, setDataList] = useState([]);
 
+    const sortAr = dataList.sort((a, b) => (a.bookmark === b.bookmark) ? 0 : a.bookmark ? -1 : 1);
+
     
     // Реф ссылка для базы
     const peopleCollectionRef = collection(db, "people");
@@ -22,7 +24,7 @@ export const Home = () => {
             await getDocs(query(peopleCollectionRef, where("owner", "==", `${cookies.access_token}`))).then((response) => {
                 const dataList = response.docs.map((doc) => ({...doc.data(), id: doc.id }));
                 const SortData = dataList.sort((a, b) => (a.bookmark === b.bookmark) ? 0 : a.bookmark ? -1 : 1);
-                setDataList(SortData)
+                setDataList(dataList)
             })
         }
         getPeople();
@@ -44,7 +46,7 @@ export const Home = () => {
             ) : ( 
             <>
             <div className='regular-place'>
-              {dataList.map((data) => {
+              {sortAr.map((data) => {
                 return (
                     <StaticInfoUser 
                     id={data.id} 
