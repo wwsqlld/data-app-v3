@@ -18,15 +18,16 @@ export const StaticInfoUser = (props) => {
 
     const [listIm1, setListIm1] = useState([]);
 
-    const [ifBooked] = useState(props.bookmark);
+    const [ifBooked, setIfBooked] = useState(props.bookmark);
 
     const changeBookPoint = async () => {
         const descRef = doc(db, "people", `${props.id}`);
          try {
             await updateDoc(descRef, {
                 bookmark: !ifBooked
-            });
-            window.location.reload()
+            }).then(() => {
+                setIfBooked(!ifBooked)
+            })
         } catch (err) {
             console.log(err)
         }   
